@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <title>Sharkie</title>
+    <script src="./js/classes/movableObject.class.js"></script>
+    <script src="./js/classes/character.class.js"></script>
+    <script src="./js/level1.js"></script>
+    <script src="./js/classes/world.class.js"></script>
     <script src="./js/game.js"></script>
 </head>
-<body>
+<body onload="init()">
     <div class="background">
         <div class="canvasAndH1ParentDiv">
             <h1>Sharkie</h1>
             <div class="canvasParentDiv">
-                <canvas></canvas>
+                <canvas id="canvas"></canvas>
             </div>
         </div>
     </div>
