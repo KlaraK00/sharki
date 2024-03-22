@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+canvas {
+    background-color: black;
+    height: 480px;
+    width: 720px;
+    vertical-align: middle;
+}
+
+h1 {
+    margin: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.background {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvasAndH1ParentDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvasParentDiv {
+    height: fit-content;
+}
