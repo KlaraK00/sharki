@@ -1,9 +1,9 @@
-class drawableObject {
+class DrawableObject {
     img;
-    x = 50;
-    y = 50;
-    width = 200;
-    height = 100;
+    x = 0;
+    y = 0;
+    height = canvas.height;
+    width = canvas.width;
 
     loadImage(path) {
         this.img = new Image();
