@@ -26,3 +26,9 @@ let GREEN_PUFFER_FISH_SWIM_IMAGES = [
     '../img/2.Enemy/1.Puffer fish (3 color options)/1.Swim/1.swim4.png',
     '../img/2.Enemy/1.Puffer fish (3 color options)/1.Swim/1.swim5.png'
 ]
+
+let BACKGROUND_WATER_DARK = [
+    '../img/3.Background/Legacy/Layers/5. Water/D1.png',
+    '..img/3.Background/Legacy/Layers/5. Water/D2.png',
+    '../img/3.Background/Legacy/Layers/5. Water/D3.png'
+]

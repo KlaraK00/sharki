@@ -1,26 +1,19 @@
-class MovableObject {
-    img;
-    x = 50;
-    y = 50;
-    width = 200;
-    height = 100;
-
-    loadImage(path) {
-        this.img = new Image();
-        this.img.src = path;
-    }
-
+class MovableObject extends drawableObject {
     // loadImages(path) {
 
     // }
 
     moveLeft() {
+        this.x -= this.speed;
+    }
+
+    moveLeftInterval() {
         setInterval( () => {
-            this.x -= 0.9;
-        }, 20);
+            this.moveLeft();
+        }, this.intervalSpeed);
     }
 
     moveRight() {
-        this.x += 0.9;
+        this.x += this.speed;
     }
 }
