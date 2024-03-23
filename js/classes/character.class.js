@@ -6,10 +6,6 @@ class Character extends MovableObject {
 
     constructor() {
         super();
-        let image = new Image();
-        image.src = '../img/1.Sharkie/1.IDLE/1.png';
-        setTimeout(()=> {
-            ctx.drawImage(image, this.x, this.y, this.width, this.height);
-        }, 2000)
+        this.loadImage(SHARKIE_IDLE_IMAGES[0]);
     }
 }

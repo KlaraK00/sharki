@@ -1,13 +1,26 @@
 class MovableObject {
-    x;
-    y;
     img;
+    x = 50;
+    y = 50;
+    width = 200;
+    height = 100;
 
-    constructor() {
-        
+    loadImage(path) {
+        this.img = new Image();
+        this.img.src = path;
+    }
+
+    // loadImages(path) {
+
+    // }
+
+    moveLeft() {
+        setInterval( () => {
+            this.x -= 0.9;
+        }, 20);
     }
 
     moveRight() {
-        console.log('Moving right');
+        this.x += 0.9;
     }
 }

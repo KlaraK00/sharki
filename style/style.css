@@ -4,8 +4,6 @@ body {
 
 canvas {
     background-color: black;
-    height: 480px;
-    width: 720px;
     vertical-align: middle;
 }
 
