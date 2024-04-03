@@ -1,6 +1,6 @@
 class MovableObject extends DrawableObject {
     speed;
-    intervalSpeed = 1000 / 60; // 60 x pro Sekunde
+    intervalSpeed = 1000 / 60; // 60 x per second
     imageCache = {};
 
     loadImages(array) {
@@ -9,6 +9,29 @@ class MovableObject extends DrawableObject {
             this.img.src = path;
             this.imageCache[path] = this.img;
         });
+    }
+
+    startAnimation(array) {
+        let i = this.currentImage % array.length; // i = 19 modulu 18 = 0, Rest 1 => i = 1;
+        let path = array[i];
+        this.img = this.imageCache[path];
+        this.currentImage++;
+    }
+
+    checksIfAnimationBeginsFromStart(animationVariable) {
+        if(this.animationVariableIsFromCharacter(animationVariable)) {
+            return this.correctVariablesFromCharacter();
+        } else if(this.animationVariableIsFromPufferFish(animationVariable)) {
+            return this.correctVariablesFromPufferFish();
+        }
+    }
+
+    animationVariableIsFromCharacter(animationVariable) {
+        return animationVariable && this instanceof Character;
+    }
+
+    animationVariableIsFromPufferFish(animationVariable) {
+        return animationVariable && this instanceof PufferFish;
     }
 
     /**

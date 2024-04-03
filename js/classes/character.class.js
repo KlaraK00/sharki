@@ -11,7 +11,6 @@ class Character extends MovableObject {
 
     constructor() {
         super();
-        // this.loadImage(SHARKIE_IDLE_IMAGES[0]);
         this.loadImages(SHARKIE_IDLE_IMAGES);
         this.loadImages(SHARKIE_LONG_IDLE_IMAGES);
         this.animate();
@@ -37,24 +36,15 @@ class Character extends MovableObject {
         this.longIdleTrue = this.checksIfAnimationBeginsFromStart(this.longIdleTrue);
     }
 
-    checksIfAnimationBeginsFromStart(animationVariable) {
-        if(animationVariable) {
-            this.idleTrue = true;
-            this.longIdleTrue = true;
-            this.currentImage = 0;
-            return false;
-        }
+    correctVariablesFromCharacter() {
+        this.idleTrue = true;
+        this.longIdleTrue = true;
+        this.currentImage = 0;
+        return false;
     }
 
     longIdle() {
         this.startAnimation(SHARKIE_LONG_IDLE_IMAGES);
-    }
-
-    startAnimation(array) {
-        let i = this.currentImage % array.length; // i = 19 modulu 18 = 0, Rest 1 => i = 1;
-        let path = array[i];
-        this.img = this.imageCache[path];
-        this.currentImage++;
     }
 
     checksIfIdleBeginsFromStart() {

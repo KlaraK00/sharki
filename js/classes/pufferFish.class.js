@@ -3,6 +3,7 @@ class PufferFish extends MovableObject {
     width = 50;
     height = 35;
     currentImage = 0;
+    swimTrue = true;
 
     constructor() {
         super();
@@ -16,10 +17,22 @@ class PufferFish extends MovableObject {
 
     animate() {
         setInterval(() => {
-            let i = this.currentImage % GREEN_PUFFER_FISH_SWIM_IMAGES.length; // i = 19 modulu 18 = 0, Rest 1 => i = 1;
-            let path = GREEN_PUFFER_FISH_SWIM_IMAGES[i];
-            this.img = this.imageCache[path];
-            this.currentImage++;
-        }, 150);
+            this.checksIfSwimBeginsFromStart();
+            this.swim();
+        }, 200);
+    }
+
+    checksIfSwimBeginsFromStart() {
+        this.swimTrue = this.checksIfAnimationBeginsFromStart(this.swimTrue);
+    }
+
+    correctVariablesFromPufferFish() {
+        this.swimTrue = true;
+        this.currentImage = 0;
+        return false;
+    }
+
+    swim() {
+        this.startAnimation(GREEN_PUFFER_FISH_SWIM_IMAGES);
     }
 }
