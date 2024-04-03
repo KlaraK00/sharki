@@ -16,17 +16,17 @@ class World {
         new PufferFish(),
         new PufferFish()
     ];
+    keyboard;
 
-    constructor(ctx) {
+    constructor(keyboard) {
         this.draw();
-        // this.ctx = ctx;
-        // this.setWorld();
+        this.keyboard = keyboard;
+        this.setWorld();
     }
 
-    // setWorld() {
-    //     debugger;
-    //     character.world = this;
-    // }
+    setWorld() {
+        this.character.world = this;
+    }
 
     /**
      * Draws the game.

@@ -1,9 +1,15 @@
 class MovableObject extends DrawableObject {
     speed;
-    intervalSpeed = 33.33; // ca. 30 x pro Sekunde
-    // loadImages(path) {
+    intervalSpeed = 1000 / 60; // 60 x pro Sekunde
+    imageCache = {};
 
-    // }
+    loadImages(array) {
+        array.forEach(path => {
+            this.img = new Image();
+            this.img.src = path;
+            this.imageCache[path] = this.img;
+        });
+    }
 
     /**
      * Moves an object to the left while subtracting the the amount of speed from the x-coordinate.
